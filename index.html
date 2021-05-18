@@ -8,7 +8,57 @@
     <title>Dice Roller</title>
 </head>
 <body>
-    
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Dice Options
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Dice Controller</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="btn-group" data-toggle="buttons" id="diceSelection">
+                <input type="radio" class="btn-check" id="btn-check-1-outlined" name="options" checked autocomplete="off" value="4">
+                <label class="btn btn-outline-secondary" for="btn-check-1-outlined">D4</label><br>
+
+                <input name="options" type="radio" class="btn-check" id="btn-check-2-outlined" autocomplete="off" value="6">
+                <label class="btn btn-outline-secondary" for="btn-check-2-outlined">D6</label><br>
+
+                <input name="options" type="radio" class="btn-check" id="btn-check-3-outlined" autocomplete="off" value="8">
+                <label class="btn btn-outline-secondary" for="btn-check-3-outlined">D8</label><br>
+
+                <input name="options" type="radio" class="btn-check" id="btn-check-4-outlined" autocomplete="off" value="10">
+                <label class="btn btn-outline-secondary" for="btn-check-4-outlined">D10</label><br>
+                <div id="numberOfDice">
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary" type="button" onclick="diceNumberSet(0)">-</button>
+                        <input type="number" class="form-control col-sm" placeholder="Dice Amount" aria-label="Dice number with - and + button" id="diceNumberInput">
+                        <button class="btn btn-outline-secondary" type="button" onclick="diceNumberSet(1)">+</button>
+                      </div>
+                </div>
+            </div>
+            <br>
+            <div id="modifier">
+                <div class="input-group">
+                    <button class="btn btn-outline-secondary" type="button" onclick="modifier(0)">-</button>
+                    <input type="number" class="form-control col-sm" placeholder="Modifier" aria-label="Dice Modifier with - and + button" id="modifierInput">
+                    <button class="btn btn-outline-secondary" type="button" onclick="modifier(1)">+</button>
+                  </div>
+            </div>
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="roll()">Roll</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
